@@ -2,7 +2,8 @@
 
 **Version:** v1.0.0
 
-![Smart Parking System Physical Model](docs/preview.jpg)
+![Smart Parking System electric Model](docs/preview.jpg)
+![Smart Parking System Physical Model](docs/preview2.jpg)
 
 ## 📖 Overview
 
