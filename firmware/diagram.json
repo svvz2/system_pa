@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Smart Parking Graduation Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 20, "left": 10, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "s1", "top": -220, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-hc-sr04", "id": "s2", "top": -115, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-hc-sr04", "id": "s3", "top": -10, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-hc-sr04", "id": "s4", "top": 95, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-hc-sr04", "id": "s5", "top": 200, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-hc-sr04", "id": "s6", "top": 305, "left": 330, "attrs": { "distance": "100" } },
+    { "type": "wokwi-lcd2004", "id": "lcd", "top": -230, "left": -340, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-servo", "id": "servo", "top": 230, "left": -300, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n1", "top": 370, "left": -180, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n2", "top": 370, "left": -120, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n3", "top": 370, "left": -60, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n4", "top": 370, "left": 0, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n5", "top": 370, "left": 60, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "n6", "top": 370, "left": 120, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "outer", "top": 180, "left": -140, "attrs": { "label": "OUTER IR", "color": "blue" } },
+    { "type": "wokwi-pushbutton", "id": "inner", "top": 180, "left": -60, "attrs": { "label": "INNER IR", "color": "green" } },
+    { "type": "wokwi-pushbutton", "id": "override", "top": 180, "left": 20, "attrs": { "label": "OVERRIDE", "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:D13", "s1:TRIG", "green", [] ], [ "esp:D32", "s1:ECHO", "blue", [] ],
+    [ "esp:D14", "s2:TRIG", "green", [] ], [ "esp:D33", "s2:ECHO", "blue", [] ],
+    [ "esp:D16", "s3:TRIG", "green", [] ], [ "esp:D34", "s3:ECHO", "blue", [] ],
+    [ "esp:D17", "s4:TRIG", "green", [] ], [ "esp:D35", "s4:ECHO", "blue", [] ],
+    [ "esp:D18", "s5:TRIG", "green", [] ], [ "esp:VP", "s5:ECHO", "blue", [] ],
+    [ "esp:D19", "s6:TRIG", "green", [] ], [ "esp:VN", "s6:ECHO", "blue", [] ],
+    [ "esp:VIN", "s1:VCC", "red", [] ], [ "esp:VIN", "s2:VCC", "red", [] ], [ "esp:VIN", "s3:VCC", "red", [] ],
+    [ "esp:VIN", "s4:VCC", "red", [] ], [ "esp:VIN", "s5:VCC", "red", [] ], [ "esp:VIN", "s6:VCC", "red", [] ],
+    [ "esp:GND.1", "s1:GND", "black", [] ], [ "esp:GND.1", "s2:GND", "black", [] ], [ "esp:GND.1", "s3:GND", "black", [] ],
+    [ "esp:GND.1", "s4:GND", "black", [] ], [ "esp:GND.1", "s5:GND", "black", [] ], [ "esp:GND.1", "s6:GND", "black", [] ],
+    [ "esp:D21", "lcd:SDA", "blue", [] ], [ "esp:D22", "lcd:SCL", "green", [] ], [ "esp:VIN", "lcd:VCC", "red", [] ], [ "esp:GND.1", "lcd:GND", "black", [] ],
+    [ "esp:D25", "servo:PWM", "orange", [] ], [ "esp:VIN", "servo:V+", "red", [] ], [ "esp:GND.1", "servo:GND", "black", [] ],
+    [ "esp:D26", "n1:DIN", "green", [] ], [ "n1:DOUT", "n2:DIN", "green", [] ], [ "n2:DOUT", "n3:DIN", "green", [] ], [ "n3:DOUT", "n4:DIN", "green", [] ], [ "n4:DOUT", "n5:DIN", "green", [] ], [ "n5:DOUT", "n6:DIN", "green", [] ],
+    [ "esp:VIN", "n1:VDD", "red", [] ], [ "esp:VIN", "n2:VDD", "red", [] ], [ "esp:VIN", "n3:VDD", "red", [] ], [ "esp:VIN", "n4:VDD", "red", [] ], [ "esp:VIN", "n5:VDD", "red", [] ], [ "esp:VIN", "n6:VDD", "red", [] ],
+    [ "esp:GND.1", "n1:VSS", "black", [] ], [ "esp:GND.1", "n2:VSS", "black", [] ], [ "esp:GND.1", "n3:VSS", "black", [] ], [ "esp:GND.1", "n4:VSS", "black", [] ], [ "esp:GND.1", "n5:VSS", "black", [] ], [ "esp:GND.1", "n6:VSS", "black", [] ],
+    [ "esp:D27", "outer:1.l", "blue", [] ], [ "esp:GND.1", "outer:2.l", "black", [] ],
+    [ "esp:D23", "inner:1.l", "green", [] ], [ "esp:GND.1", "inner:2.l", "black", [] ],
+    [ "esp:D4", "override:1.l", "red", [] ], [ "esp:GND.1", "override:2.l", "black", [] ]
+  ],
+  "dependencies": {}
+}
+

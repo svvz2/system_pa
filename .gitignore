@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+.env
+.env.*
+!.env.example
+dist/
+dist-mobile*/
+dist-web*/
+coverage/
+.DS_Store
+*.log
+.pio/
+.vscode/.browse.c_cpp.db*
+firmware/include/secrets.h
+docs/expo-dev-qr.png
+supabase/.branches/
+supabase/.temp/

@@ -1,0 +1,21 @@
+{
+  "name": "smart-parking-device-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.23.1",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.0"
+  }
+}
+

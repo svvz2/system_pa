@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "كراج ذكي",
+    "slug": "smart-parking-garage",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "parking",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "android": {
+      "package": "com.graduation.smartparking",
+      "permissions": ["CAMERA", "POST_NOTIFICATIONS"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.graduation.smartparking",
+      "supportsTablet": true
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "نحتاج الكاميرا لمسح رمز بوابة الكراج",
+          "barcodeScannerEnabled": true,
+          "recordAudioAndroid": false
+        }
+      ],
+      "expo-secure-store",
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
+

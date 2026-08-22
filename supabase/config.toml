@@ -1,0 +1,52 @@
+project_id = "smart-parking-graduation"
+
+[api]
+enabled = true
+port = 55321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 55322
+major_version = 17
+
+[studio]
+enabled = true
+port = 55323
+
+[local_smtp]
+enabled = true
+port = 55324
+
+[auth]
+enabled = true
+site_url = "parking://auth"
+additional_redirect_urls = ["parking://**", "exp://127.0.0.1:8081/**"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+double_confirm_changes = true
+
+[functions.register-profile]
+verify_jwt = false
+
+[functions.create-booking]
+verify_jwt = false
+
+[functions.cancel-booking]
+verify_jwt = false
+
+[functions.request-entry]
+verify_jwt = false
+
+[functions.admin-command]
+verify_jwt = false
+
+[functions.admin-booking-details]
+verify_jwt = false
+
+[functions.device-sync]
+verify_jwt = false

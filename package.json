@@ -1,0 +1,29 @@
+{
+  "name": "smart-parking-graduation-project",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "mobile",
+    "simulator"
+  ],
+  "scripts": {
+    "mobile": "npm run start --workspace mobile",
+    "mobile:android": "npm run android --workspace mobile",
+    "simulator": "npm run dev --workspace simulator",
+    "dev:proxy": "node scripts/dev-lan-proxy.mjs",
+    "test": "npm run test --workspace simulator",
+    "typecheck": "npm run typecheck --workspace mobile && npm run typecheck --workspace simulator",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "qr": "node scripts/generate-qr.mjs",
+    "admin:create": "node scripts/create-admin.mjs",
+    "demo:create": "node scripts/create-demo-user.mjs",
+    "test:concurrency": "node scripts/test-concurrency.mjs",
+    "test:e2e": "node scripts/test-e2e.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4",
+    "supabase": "^2.72.8"
+  }
+}
